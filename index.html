@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Test</title>
+</head>
+<body>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<script>
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const bg = new Image();
+  bg.src = 'assets/background.png';
+
+  bg.onload = () => {
+    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "red";
+    ctx.fillRect(100, 100, 50, 50);
+  };
+
+  bg.onerror = () => {
+    alert("❌ Bild konnte nicht geladen werden!");
+  };
+</script>
+</body>
+</html>
